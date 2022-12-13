@@ -9,6 +9,8 @@ It is also an environment where new portal features can be spiked, tested and do
 The portal allows different applications to execute within a shared context.
 The shared context can provide user login, a notification system, a shared dashboard view, user management, navigation between applications and language features.
 
+[portal.png]
+
 ## Frontend components
 The frontend executes as one single react app.
 
@@ -54,6 +56,5 @@ Dashboard and widgets
 default language
 module api
 docker files for local development?
-
-
+impersonering
 
