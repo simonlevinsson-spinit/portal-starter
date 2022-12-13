@@ -4,7 +4,6 @@ import {AppShell} from "shell";
 
 
 function App() {
-//hej
   return (
     <AppShell withoutLogin={true} moduleDefinitions={[RentalModule]} />
   );

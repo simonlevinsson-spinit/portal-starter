@@ -22,6 +22,7 @@ importers:
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       invoice: workspace:*
+      my-module-app: file:my-module-app-0.0.0.tgz
       react: ^18.2.0
       react-dom: ^18.2.0
       rental: workspace:*
@@ -32,6 +33,7 @@ importers:
       vite: ^3.0.0
     dependencies:
       invoice: link:../../packages/modules/invoice
+      my-module-app: file:apps/portal/my-module-app-0.0.0.tgz
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       rental: link:../../packages/modules/rental
@@ -2396,4 +2398,13 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  file:apps/portal/my-module-app-0.0.0.tgz:
+    resolution: {integrity: sha512-7rG7psgqv1c4PIlME5DS14gLmVkmg1yejMeIZ34lFri0qe03zmYnh5Ik6XsXi8Q8upjRqdMKDp/IXFkaEPt4Dw==, tarball: file:apps/portal/my-module-app-0.0.0.tgz}
+    name: my-module-app
+    version: 0.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false

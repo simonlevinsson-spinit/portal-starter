@@ -9,7 +9,7 @@ const Invoice = () => {
 	const intl = useIntl();
 	return <Header title={intl.formatMessage({ id: "invoice_title" })} />;
 };
-//h
+
 export const InvoiceModule: IModuleDefinition = {
 	name: "Invoice",
 	routes: [
