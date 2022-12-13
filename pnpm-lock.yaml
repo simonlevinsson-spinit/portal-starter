@@ -21,18 +21,20 @@ importers:
       '@vitejs/plugin-react': ^2.2.0
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
-      modules: workspace:*
+      invoice: workspace:*
       react: ^18.2.0
       react-dom: ^18.2.0
+      rental: workspace:*
       shell: workspace:*
       tsconfig: workspace:*
       typescript: 4.9.4
       ui: workspace:*
       vite: ^3.0.0
     dependencies:
-      modules: link:../../packages/modules
+      invoice: link:../../packages/modules/invoice
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      rental: link:../../packages/modules/rental
       shell: link:../../packages/shell
       ui: link:../../packages/ui
     devDependencies:
@@ -52,18 +54,18 @@ importers:
       '@vitejs/plugin-react': ^2.2.0
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
-      modules: workspace:*
       react: ^18.2.0
       react-dom: ^18.2.0
+      rental: workspace:*
       shell: workspace:*
       tsconfig: workspace:*
       typescript: 4.9.4
       ui: workspace:*
       vite: ^3.0.0
     dependencies:
-      modules: link:../../packages/modules
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      rental: link:../../packages/modules/rental
       shell: link:../../packages/shell
       ui: link:../../packages/ui
     devDependencies:
@@ -86,7 +88,7 @@ importers:
       '@typescript-eslint/parser': 5.44.0_wy4udjehnvkneqnogzx5kughki
       eslint-config-prettier: 8.5.0_eslint@8.28.0
 
-  packages/modules:
+  packages/modules/invoice:
     specifiers:
       '@types/react': ^18.0.24
       '@types/react-dom': ^18.0.8
@@ -105,14 +107,43 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-intl: 6.2.5_o77wnou4wwnegu5woljtklrzru
-      shell: link:../shell
-      ui: link:../ui
+      shell: link:../../shell
+      ui: link:../../ui
     devDependencies:
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.9
       eslint: 7.32.0
-      eslint-config-custom: link:../eslint-config-custom
-      tsconfig: link:../tsconfig
+      eslint-config-custom: link:../../eslint-config-custom
+      tsconfig: link:../../tsconfig
+      typescript: 4.9.4
+
+  packages/modules/rental:
+    specifiers:
+      '@types/react': ^18.0.24
+      '@types/react-dom': ^18.0.8
+      eslint: ^7.32.0
+      eslint-config-custom: workspace:*
+      moment: 2.29.4
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      react-intl: 6.2.5
+      shell: workspace:*
+      tsconfig: workspace:*
+      typescript: 4.9.4
+      ui: workspace:*
+    dependencies:
+      moment: 2.29.4
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-intl: 6.2.5_o77wnou4wwnegu5woljtklrzru
+      shell: link:../../shell
+      ui: link:../../ui
+    devDependencies:
+      '@types/react': 18.0.26
+      '@types/react-dom': 18.0.9
+      eslint: 7.32.0
+      eslint-config-custom: link:../../eslint-config-custom
+      tsconfig: link:../../tsconfig
       typescript: 4.9.4
 
   packages/shell:

@@ -9,7 +9,7 @@ const Rental = () => {
 	const intl = useIntl();
 	return <Header title={intl.formatMessage({id: "rental_title"})} />;
 };
-
+//t
 export const RentalModule: IModuleDefinition = {
 	name: "Rental",
 	routes: [

@@ -1,5 +1,5 @@
 {
-  "name": "modules",
+  "name": "rental",
   "version": "0.0.0",
   "main": "./index.ts",
   "types": "./dist/index.d.ts",
