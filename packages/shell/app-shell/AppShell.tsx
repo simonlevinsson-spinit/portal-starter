@@ -6,12 +6,12 @@ import {
 	createReactRouter,
 	createRouteConfig,
 } from "@tanstack/react-router";
-import { IModuleDefinition } from "modules";
 import { IntlProvider } from "react-intl";
+import { IModuleDefinition } from "..";
 
 interface AppShellProps {
 	moduleDefinitions: IModuleDefinition[];
-	withoutLogin: boolean;
+	withoutLogin?: boolean;
 }
 
 export const AppShell = (props: AppShellProps) => {
