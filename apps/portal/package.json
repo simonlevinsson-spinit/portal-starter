@@ -15,7 +15,8 @@
     "invoice": "workspace:*",
     "rental": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "my-module-app": "file:my-module-app-0.0.0.tgz"
     },
   "devDependencies": {
     "eslint": "^7.32.0",
