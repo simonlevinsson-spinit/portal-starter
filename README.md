@@ -64,7 +64,7 @@ The shell might provide som apis on its own. The idea is that these can exist as
 # Shell features
 
 ## Users, Roles, Features and User Dimensions (WIP)
-- `Users` are defined outside the portal framework. Identity Provider is probably Azure B2C (?).
+- `Users` are defined outside the portal framework. Identity Provider is probably Azure B2C (?). Users are from within the portal referenced by id (I think azure calls it objid). Some basic information can probably be denormalized (copied over) from azure, like name and email.
 - `Roles` are defined in a user management module (which lives inside the portal)
 - `Features` are exposed by `modules` (even the user management module might expose features, but some must be "hardcoded" to ensure you cannot kick yourself out of the user management module)
   - ? Shouldn't it be called "permission" rather than "feature"? I'm not so sure. A feature describes a module capability. A permission is a relation between a user and a feature. Thats why I think `feature` is the better word here.
