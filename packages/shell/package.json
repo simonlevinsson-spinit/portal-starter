@@ -1,0 +1,26 @@
+{
+  "name": "shell",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "TIMING=1 eslint \"**/*.ts\""
+  },
+  "dependencies": {
+    "moment": "2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "modules": "workspace:*",
+    "@tanstack/react-router": "0.0.1-beta.38",
+    "react-intl": "6.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "4.9.4",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8"
+  }
+}
