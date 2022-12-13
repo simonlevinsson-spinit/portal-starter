@@ -66,17 +66,14 @@ The shell might provide som apis on its own. The idea is that these can exist as
 ## Users, Roles, Features and User Dimensions (WIP)
 - `Users` are defined outside the portal framework. Identity Provider is probably Azure B2C (?).
 - `Roles` are defined in a user management module (which lives inside the portal)
-- `Features` are exposed by `modules` (even the user management module might expose features, but some must be "hardcoded" to ensure you cannot kick yourself out)
+- `Features` are exposed by `modules` (even the user management module might expose features, but some must be "hardcoded" to ensure you cannot kick yourself out of the user management module)
+  - ? Shouldn't it be called "permission" rather than "feature"? I'm not so sure. A feature describes a module capability. A permission is a relation between a user and a feature. Thats why I think `feature` is the better word here.
 - The `user management module` will give `user managers` the possibility to assign
-`features` to `roles`, and `roles` to `user`. I see no reason why a user can't have multiple roles. Features available for a user is _the union of the assigned roles feature sets_.
-- As a bonus side effect, `Features` could be turned on and off completely. With this functionality we can quickly take down malfunctioning code and also leverage some kind of feature-flag capability
+`features` to `roles`, and `roles` to `user`. I see no reason why a user can't have multiple roles. Features available for a user is _the union of the feature sets of the assigned roles_.
+- As a bonus side effect, `Features` could be turned on and off directly in the portal. With this functionality we can quickly take down malfunctioning code and also leverage runtime switchable feature-flag capability (which is also an important component of trunk-based development, if we go down that route.)
 - Some `features` dosnt make sense without some further context. This context is user specific and can be provided through `user dimensions`. In addition to `features`, each `module` can expose a set of module specific `user dimensions`. (In the context of a `user`, it could be called `module dimensions` instead). These `user dimensions` acts like extensions on the user object, and can be managed through the `user management module`. As an example, a typical `user dimension` of the `RamiConnect`-module, could be `"projects"`. For each user, you can use this dimension to extend the user object with a set of `project`s. These user projects can then be used in conjunction with a `"Parameterized" feature` to determine _which_ project(s) this `feature` is enabled for, for the given user.
 
 - ?: Do we need the capability to quickly add a feature to a user, without doing it transitively through a role? There are multiple ways to do this, with different pros and cons.
   - Add a relation between user and feature, or
   - Create an implicit user specific role, or
   - Add a role-extension to the user, which can override any role configuration
-
-
-
-
