@@ -16,6 +16,9 @@ This repo is intended to showcase portal features, provide documentation, refere
 
 It is also an environment where new portal features can be spiked, tested and documented.
 
+## Reference module
+My-module-app(sic!) is an external built module without any folder or workspace dependencies in this monorepo. This app was created externally and copied to this monorepo. To be able to be used as an Module the shell project was published with `npm pack` and included as an devDependency in my-module-app. My-module-app(sic!) was also published with `npm pack` and set as dependecy in portal-app. 
+
 # Portal basics
 
 The portal allows different applications to execute within a shared context.
