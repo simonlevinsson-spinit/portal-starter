@@ -12,7 +12,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "@tanstack/react-router": "0.0.1-beta.38",
-    "react-intl": "6.2.5"
+    "react-intl": "6.2.5",
+    "@azure/msal-browser": "2.32.1",
+    "@azure/msal-react": "1.5.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

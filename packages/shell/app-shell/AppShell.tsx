@@ -1,50 +1,28 @@
 import React from "react";
 import {
-	Outlet,
 	RouterProvider,
-	Link,
 	createReactRouter,
 	createRouteConfig,
 } from "@tanstack/react-router";
 import { IntlProvider } from "react-intl";
 import { IModuleDefinition } from "..";
+import { PublicClientApplication } from "@azure/msal-browser";
+import { MsalProvider } from "@azure/msal-react";
+import { msalConfig } from "../authorization/authConfig";
+import { Layout } from "../layout/Layout";
 
-interface AppShellProps {
+export interface AppShellProps {
 	moduleDefinitions: IModuleDefinition[];
 	withoutLogin?: boolean;
 }
 
+const msalInstance = new PublicClientApplication(msalConfig);
+
 export const AppShell = (props: AppShellProps) => {
 	const [usersLocale, setUsersLocale] = React.useState(true);
-	const [loggedIn, setLoggedIn] = React.useState(false);
-
-	if (!(props.withoutLogin || loggedIn)) {
-		return (
-			<button type="button" onClick={() => setLoggedIn(true)}>
-				Login
-			</button>
-		);
-	}
 
 	const rootRoute = createRouteConfig({
-		component: () => (
-			<>
-				<div>
-					{props.moduleDefinitions.map((module) => (
-						<Link key={module.routes[0].path} to={`/${module.routes[0].path}`}>
-							{module.name}
-							{"  |  "}
-						</Link>
-					))}
-				</div>
-				<hr />
-				<button onClick={() => setUsersLocale((value) => !value)}>
-					Change Language
-				</button>
-				<hr />
-				<Outlet />
-			</>
-		),
+		component: () => <Layout setUsersLocale={setUsersLocale} {...props} />,
 	});
 
 	const routeConfig = rootRoute.addChildren(
@@ -65,8 +43,10 @@ export const AppShell = (props: AppShellProps) => {
 	}, {});
 
 	return (
-		<IntlProvider locale={usersLocale ? "sv" : "en"} messages={translations}>
-			<RouterProvider router={router} />
-		</IntlProvider>
+		<MsalProvider instance={msalInstance}>
+			<IntlProvider locale={usersLocale ? "sv" : "en"} messages={translations}>
+				<RouterProvider router={router} />
+			</IntlProvider>
+		</MsalProvider>
 	);
 };

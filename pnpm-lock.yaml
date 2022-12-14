@@ -171,6 +171,8 @@ importers:
 
   packages/shell:
     specifiers:
+      '@azure/msal-browser': 2.32.1
+      '@azure/msal-react': 1.5.1
       '@tanstack/react-router': 0.0.1-beta.38
       '@types/react': ^18.0.24
       '@types/react-dom': ^18.0.8
@@ -183,6 +185,8 @@ importers:
       tsconfig: workspace:*
       typescript: 4.9.4
     dependencies:
+      '@azure/msal-browser': 2.32.1
+      '@azure/msal-react': 1.5.1_23rgbx56qscpaw4qjnaj7f2j54
       '@tanstack/react-router': 0.0.1-beta.38_biqbaboplfbrettd7655fr4n2y
       moment: 2.29.4
       react: 18.2.0
@@ -231,6 +235,29 @@ packages:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
     dev: true
+
+  /@azure/msal-browser/2.32.1:
+    resolution: {integrity: sha512-2G3B12ZEIpiimi6/Yqq7KLk4ud1zZWoHvVd2kJ2VthN1HjMsZjdMUxeHkwMWaQ6RzO6mv9rZiuKmRX64xkXW9g==}
+    engines: {node: '>=0.8.0'}
+    dependencies:
+      '@azure/msal-common': 9.0.1
+    dev: false
+
+  /@azure/msal-common/9.0.1:
+    resolution: {integrity: sha512-eNNHIW/cwPTZDWs9KtYgb1X6gtQ+cC+FGX2YN+t4AUVsBdUbqlMTnUs6/c/VBxC2AAGIhgLREuNnO3F66AN2zQ==}
+    engines: {node: '>=0.8.0'}
+    dev: false
+
+  /@azure/msal-react/1.5.1_23rgbx56qscpaw4qjnaj7f2j54:
+    resolution: {integrity: sha512-4R05uUc5x0dHqtHtVGDvQDclOXg/0V1S3PFDnca73UHzlRe+RjeB/zLCY9RbcUiPv8Bdhpvj6KPL54KgaOTdpA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      '@azure/msal-browser': ^2.32.1
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      '@azure/msal-browser': 2.32.1
+      react: 18.2.0
+    dev: false
 
   /@babel/code-frame/7.12.11:
     resolution: {integrity: sha512-Zt1yodBx1UcyiePMSkWnU4hPqhwq7hGi2nFL1LeA3EUl+q2LQx16MISgJ0+z7dnmgvP9QtIleuETGOiOH1RcIw==}
