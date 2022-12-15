@@ -1,12 +1,11 @@
 using Microsoft.Identity.Web;
 
+using Portal.ModuleUtils.Cors;
 using Portal.ModuleUtils.Swagger;
 
 public class Program
 {
-#if DEBUG
-    private const string DevelopmentCorsPolicyName = nameof(DevelopmentCorsPolicyName);
-#endif
+
 
     public static async Task Main(string[] args)
     {
@@ -22,10 +21,7 @@ public class Program
             c.OperationFilter<AuthorizeOperationFilter>();
             c.AddSecurityDefinition("oauth2", new SecurityScheme(builder.Configuration, "AzureAd", "rental"));
         });
-#if DEBUG
-
-        builder.Services.AddCors(options => { options.AddPolicy(name: DevelopmentCorsPolicyName, builder => { builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin(); }); });
-#endif
+        builder.Services.AddDevelopmentCorsPolicy();
 
         var app = builder.Build();
 
@@ -45,9 +41,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-#if DEBUG
-        app.UseCors(DevelopmentCorsPolicyName);
-#endif
+        app.UseDevelopmentCorsPolicy();
         app.UseAuthentication();
         app.UseAuthorization();
 

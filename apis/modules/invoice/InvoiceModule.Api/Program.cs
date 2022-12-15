@@ -1,18 +1,13 @@
-using InvoiceModule.Api.Controllers;
-
 using Microsoft.Identity.Web;
 
+using Portal.ModuleUtils.Cors;
 using Portal.ModuleUtils.Swagger;
 
 public class Program
 {
-#if DEBUG
-    private const string DevelopmentCorsPolicyName = nameof(DevelopmentCorsPolicyName);
-#endif
 
     public static async Task Main(string[] args)
     {
-
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
@@ -24,10 +19,7 @@ public class Program
             c.OperationFilter<AuthorizeOperationFilter>();
             c.AddSecurityDefinition("oauth2", new SecurityScheme(builder.Configuration, "AzureAd", "invoice"));
         });
-#if DEBUG
-
-        builder.Services.AddCors(options => { options.AddPolicy(name: DevelopmentCorsPolicyName, builder => { builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin(); }); });
-#endif
+        builder.Services.AddDevelopmentCorsPolicy();
 
         var app = builder.Build();
 
@@ -47,9 +39,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-#if DEBUG
-        app.UseCors(DevelopmentCorsPolicyName);
-#endif
+        app.UseDevelopmentCorsPolicy();
         app.UseAuthentication();
         app.UseAuthorization();
 
