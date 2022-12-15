@@ -16,7 +16,7 @@ const Rental = () => {
 		const getToken = async () => {
 			const request = {
 				account: accounts[0],
-				scopes: ["api://0dd7a47e-0923-4558-9694-1d47a2a7395e/portal"],
+				scopes: ["api://0dd7a47e-0923-4558-9694-1d47a2a7395e/rental"],
 			};
 			const token = await instance.acquireTokenSilent(request);
 			// call api with access token
