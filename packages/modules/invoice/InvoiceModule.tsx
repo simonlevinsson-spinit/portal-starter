@@ -17,7 +17,7 @@ const Invoice = () => {
 		const getToken = async () => {
 			const request = {
 				account: accounts[0],
-				scopes: ["api://dd6ddc4f-e061-41e3-b3bd-2cf4bdb85a57/portal"],
+				scopes: ["api://dd6ddc4f-e061-41e3-b3bd-2cf4bdb85a57/invoice"],
 			};
 			const token = await instance.acquireTokenSilent(request);
 			// call api with access token
