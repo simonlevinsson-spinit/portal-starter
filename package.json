@@ -4,7 +4,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "portal": "turbo run dev --parallel --filter=portal-app"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
