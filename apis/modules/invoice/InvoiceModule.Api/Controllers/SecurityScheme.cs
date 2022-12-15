@@ -14,7 +14,7 @@ internal class SecurityScheme : OpenApiSecurityScheme
                 Scopes = new Dictionary<string, string>
                     {
                         { "openid", "" },
-                        { $"api://{configuration["AzureAD:ClientId"]}/portal", "" }
+                        { $"api://{configuration["AzureAD:ClientId"]}/invoice", "" }
                     }
             }
         };
