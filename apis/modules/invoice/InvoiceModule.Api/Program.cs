@@ -2,6 +2,7 @@ using InvoiceModule.Api.Controllers;
 
 using Microsoft.Identity.Web;
 
+using Portal.ModuleUtils.Swagger;
 
 public class Program
 {
@@ -21,7 +22,7 @@ public class Program
         builder.Services.AddSwaggerGen(c =>
         {
             c.OperationFilter<AuthorizeOperationFilter>();
-            c.AddSecurityDefinition("oauth2", new SecurityScheme(builder.Configuration));
+            c.AddSecurityDefinition("oauth2", new SecurityScheme(builder.Configuration, "AzureAd", "invoice"));
         });
 #if DEBUG
 
