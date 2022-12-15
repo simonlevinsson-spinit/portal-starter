@@ -46,7 +46,7 @@ My-module-app(sic!) is an external built module without any folder or workspace 
 The portal allows different applications to execute within a shared context.
 The shared context can provide user login, a notification system, a shared dashboard view, user management, navigation between applications and language features.
 
-![Overview](portal.png)
+![portal.drawio](portal.drawio.png)
 
 ## Frontend components
 The frontend executes as one single react app.
