@@ -6,16 +6,16 @@ namespace InvoiceModule.Api.Controllers
     [Authorize]
     [ApiController]
     [Route("[controller]")]
-    public class RentalsController : ControllerBase
+    public class RentalController : ControllerBase
     {
         private static readonly string[] Rentals = new[]
         {
             "Discokula", "DJ-anläggning", "Rökmaskin", "Kaniner", "Karaoke", "Bartender"
     };
 
-        private readonly ILogger<RentalsController> _logger;
+        private readonly ILogger<RentalController> _logger;
 
-        public RentalsController(ILogger<RentalsController> logger)
+        public RentalController(ILogger<RentalController> logger)
         {
             _logger = logger;
         }
