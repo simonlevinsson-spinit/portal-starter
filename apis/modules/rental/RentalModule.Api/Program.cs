@@ -39,7 +39,7 @@ public class Program
                 setup.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");
                 setup.SwaggerEndpoint($"/swagger/v1/swagger.json", "Version 1.0");
                 setup.OAuthClientId(builder.Configuration["Swagger:ClientId"]);
-                setup.OAuthAppName("PortalReferenceInvoiceModule");
+                setup.OAuthAppName("PortalReferenceRentalModule");
                 setup.OAuthScopeSeparator(" ");
                 setup.OAuthUsePkce();
             });

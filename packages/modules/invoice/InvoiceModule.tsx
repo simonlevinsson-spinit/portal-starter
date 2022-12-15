@@ -21,7 +21,7 @@ const Invoice = () => {
 			};
 			const token = await instance.acquireTokenSilent(request);
 			// call api with access token
-			const response = await fetch("https://localhost:7099/WeatherForecast/", {
+			const response = await fetch("https://localhost:7099/Invoice/", {
 				headers: {
 					Authorization: `Bearer ${token.accessToken}`,
 				},
