@@ -146,6 +146,7 @@ importers:
 
   packages/modules/rental:
     specifiers:
+      '@azure/msal-react': 1.5.1
       '@types/react': ^18.0.24
       '@types/react-dom': ^18.0.8
       eslint: ^7.32.0
@@ -159,6 +160,7 @@ importers:
       typescript: 4.9.4
       ui: workspace:*
     dependencies:
+      '@azure/msal-react': 1.5.1_23rgbx56qscpaw4qjnaj7f2j54
       moment: 2.29.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

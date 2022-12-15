@@ -1,1 +1,1 @@
-export { RentalModule } from "./rental/RentalModule";
+export { RentalModule } from "./RentalModule";
