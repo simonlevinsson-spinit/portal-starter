@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Customer\Customer\Customer.csproj" />
-    <ProjectReference Include="..\..\UserModule\UserModule\UserModule.csproj" />
+    <ProjectReference Include="..\..\Portal\Portal\Portal.csproj" />
   </ItemGroup>
 
 </Project>
