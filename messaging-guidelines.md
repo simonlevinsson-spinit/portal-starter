@@ -18,15 +18,18 @@ or it can fail to be sent. This is OK! These events will be picked up later, eit
 Consider deciding on each message if is a command, or an event, to clearly express its intent. 
 A command message type is usually defined by the sole receiver. An event type is defined by its sender, and can be consumed by multiple receivers.
 
-## Domain events vs change data capture, and thin vs fat events
+## Events granularity: Domain events vs "data events", and thin vs fat events
 When defining an event, it can be named in at least one of two different ways. Consider updating an order with adding a new order row. You could publish either
- - OrderUpdated, or
- - OrderLineAdded
+ - Fat: CustomerUpdated, or
+ - Thin: CustomerEmailUpdated and CustomerTerminated
 
-The first event is more general, and must contain information about how the order was updated, or rely on the receiver to be able to figure it out itself. Adding data to the event itself could be equated with the overfetching problem in synchronous apis. The receiver might not need all this information. However, reducing the amount of information to only accomodate current consumers, is giving the consumer to much influence of what the event looks like (remember, events are defined and owned by their senders). This will create coupling between senders and receivers.
+The first (fat) event is more general, can be sent on multiple occasions, and must contain information about how the order was updated, or rely on the receiver to be able to figure it out itself. Adding data to the event itself could be equated with the overfetching problem in synchronous apis. The receiver might not need all this information. However, reducing the amount of information to only accomodate current consumers, is giving the consumer to much influence of what the event looks like (remember, events are defined and owned by their senders). This will create coupling between senders and receivers. Also, problem arises when receivers have different access-level to data fields exposed by the event. Maybe fat events are more appropriate when "replicating data"? Consider the situation when you're building a search database.
 
-The second event is more specific and must only contain the OrderId and the new aggregate-local OrderLineId. The receiver will then typically query the publishing service for more information, if needed.
-Even though it might sound ineffective to always accompany the receivment of a message with a follow-up query, I think the pros outweighs the cons here. Domain events in themselves, rarely change, because 1, they contain a minimum set of data, and 2, domain rarely change. Also, I think the impact of the follow-up query can sometimes be remedied by pre-caching. "Since we're sending out a certain event, we can expect queries on the related data.")
+The second (thin) events are more specific and in both cases must only contain the CustomerId. The receiver will then typically query the publishing service for more information, if needed. Even though it might sound ineffective to sometimes accompany the receivment of a message with a follow-up query, I think the pros outweighs the cons here. 
+- Domain events in themselves, rarely change, because 1, they contain a minimum set of data, and 2, domain rarely change. 
+- The Event will not contain any sensitive data. Access control can then be performed only on follow-up queries.
+- No need for another serialized model of data. The serialized model is retrieved using the synchronous api.
+- Also, I think the impact of the follow-up query can sometimes be remedied by pre-caching. "Since we're sending out a certain event, we can expect queries on the related data.")
 
 ## Sharing message definitions
 The receiver and sender of a message, be it a command or event, must agree on the event format. In a mono-repo setting, and with a common programming language, sharing definitions is easy. Just reference them. Published packages are also an alternative if code language is shared. Otherwise, some other way of communicating message format is required. Just like open-api, there is something
