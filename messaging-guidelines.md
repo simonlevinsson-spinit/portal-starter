@@ -61,3 +61,21 @@ same message multiple times, additive effects won't occur. This can be implement
 ## Correlation Ids
 The ability to see which user action triggers what events, and what new events these events triggered, we should consider letting all events carry some correlation id. Logging should always include this correlation id. Querying the logs for a specific correlation id will give you a good overview of the interactions over the whole system. We need to discuss what would happen when an event triggers branching into multiple new events. The log might be unusable if you can't follow just one of the branches?
 Correlation ids should also be used when using synchronous apis. A custom http-header can be used for this.
+
+
+
+# My preferences
+If I decided myself, with my current knowledge, these are the decisions I'd make.
+1. Use a monorepo
+2. Use the same programming language
+3. Share an implementation of the transactional outbox and its related relay-service
+4. Differ between commands and events
+6. Publish thin events
+7. Make new versions of events backwards compatible if possible
+8. Non-backwards-compatible-events are semantically equivalent to new events
+9. Use double-pushing, and share implementation to do so
+10. If possible, make breaking changes to a message through a series of non-breaking-changes. 
+11. Maintain a list of event consumers. Consult them before deprecated events can be removed.
+12. Make receivers idempotent. If you have to, use the message id as an idempotency id. 
+13. Share implementation to de-duplicate messages using idempotency id.
+14. Always forward a correlation id. Share code to handle correlation ids.
