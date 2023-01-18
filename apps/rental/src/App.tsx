@@ -5,7 +5,7 @@ import {AppShell} from "shell";
 
 function App() {
   return (
-    <AppShell withoutLogin={true} moduleDefinitions={[RentalModule]} />
+    <AppShell moduleDefinitions={[RentalModule]} />
   );
 }
 

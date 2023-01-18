@@ -31,7 +31,7 @@
 		<Exec WorkingDirectory="$(SpaRoot)" Command="pnpm install" />
 
 		<Message Importance="high" Text="Building Vite application..."  />
-		<Exec WorkingDirectory="$(SpaRoot)" Command="pnpm build" />
+		<Exec WorkingDirectory="../.." Command="pnpm build" />
 
 		<ItemGroup>
 			<Dist Include="$(SpaRoot)dist\**\*.*" />
