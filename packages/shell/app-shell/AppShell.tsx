@@ -13,7 +13,6 @@ export interface AppShellProps {
 }
 
 const msalInstance = new PublicClientApplication(msalConfig);
-
 export const AppShell = (props: AppShellProps) => {
 	const [usersLocale, setUsersLocale] = React.useState(true);
 

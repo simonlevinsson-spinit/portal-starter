@@ -4,18 +4,17 @@ import { IModuleDefinition } from "shell";
 import { Header } from "ui";
 import en from "./translations/en.json";
 import sv from "./translations/sv.json";
-import { getRentals } from "./api/Api";
+import { getRentals } from "./api/RentalApi";
 
 const Rental = () => {
 	const intl = useIntl();
-	// get access token
 	const [json, SetJson] = React.useState<string>();
 	React.useEffect(() => {
-		const getToken = async () => {
-			const t = await getRentals();
-			SetJson(JSON.stringify(t));
+		const fetchRentals = async () => {
+			const rentals = await getRentals();
+			SetJson(JSON.stringify(rentals));
 		};
-		getToken();
+		fetchRentals();
 	}, []);
 
 	return (
@@ -23,8 +22,8 @@ const Rental = () => {
 			<Header title={intl.formatMessage({ id: "rental_title" })} />
 			<button
 				onClick={async () => {
-					const t = await getRentals();
-					SetJson(JSON.stringify(t));
+					const rentals = await getRentals();
+					SetJson(JSON.stringify(rentals));
 				}}
 			>
 				Get Rentals
