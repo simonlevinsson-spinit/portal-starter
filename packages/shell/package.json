@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@azure/msal-browser": "2.32.1",
-    "@azure/msal-react": "1.5.1",
     "@tanstack/react-query": "^4.22.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

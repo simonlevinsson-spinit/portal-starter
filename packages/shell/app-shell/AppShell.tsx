@@ -2,9 +2,6 @@ import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
 import { IModuleDefinition } from "..";
-import { PublicClientApplication } from "@azure/msal-browser";
-import { MsalProvider } from "@azure/msal-react";
-import { msalConfig } from "../authorization/authConfig";
 import { Layout } from "../layout/Layout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -12,7 +9,6 @@ export interface AppShellProps {
 	moduleDefinitions: IModuleDefinition[];
 }
 
-const msalInstance = new PublicClientApplication(msalConfig);
 export const AppShell = (props: AppShellProps) => {
 	const [usersLocale, setUsersLocale] = React.useState(true);
 
@@ -25,7 +21,6 @@ export const AppShell = (props: AppShellProps) => {
 	}, {});
 
 	return (
-		<MsalProvider instance={msalInstance}>
 			<IntlProvider locale={usersLocale ? "sv" : "en"} messages={translations}>
 				<QueryClientProvider client={queryClient}>
 					<BrowserRouter>
@@ -43,6 +38,5 @@ export const AppShell = (props: AppShellProps) => {
 					</BrowserRouter>
 				</QueryClientProvider>
 			</IntlProvider>
-		</MsalProvider>
 	);
 };
