@@ -1,11 +1,12 @@
 import { authenticatedGet, viteConfig } from "shell";
-const baseUrl = "https://localhost:7098";
+const baseUrl = viteConfig.DEV ?  "https://localhost:7098" : "/bff/rental";
 
-export const getRentals = async () => {
-  const url = viteConfig.DEV
-    ? `${baseUrl}/Rental`
-    : "/bff/rental/Rental";
+export interface IRental {
+  item: string;
+  quantity: number;
+}
 
-  const response = await authenticatedGet(url);
+export const getRentals = async (): Promise<IRental[]> => {
+  const response = await authenticatedGet(`${baseUrl}/Rental`);
   return await response?.json();
 };

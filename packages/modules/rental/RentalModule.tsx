@@ -5,30 +5,25 @@ import { Header } from "ui";
 import en from "./translations/en.json";
 import sv from "./translations/sv.json";
 import { getRentals } from "./api/RentalApi";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const Rental = () => {
 	const intl = useIntl();
-	const [json, SetJson] = React.useState<string>();
-	React.useEffect(() => {
-		const fetchRentals = async () => {
-			const rentals = await getRentals();
-			SetJson(JSON.stringify(rentals));
-		};
-		fetchRentals();
-	}, []);
+	const queryClient = useQueryClient();
+	const { isLoading, data: rentals } = useQuery({
+		queryKey: ["rentals"],
+		queryFn: getRentals,
+	});
 
 	return (
 		<>
 			<Header title={intl.formatMessage({ id: "rental_title" })} />
 			<button
-				onClick={async () => {
-					const rentals = await getRentals();
-					SetJson(JSON.stringify(rentals));
-				}}
+				onClick={() => queryClient.invalidateQueries({ queryKey: ["rentals"] })}
 			>
 				Get Rentals
 			</button>
-			{json}
+			{!isLoading && JSON.stringify(rentals)}
 		</>
 	);
 };

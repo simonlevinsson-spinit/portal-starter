@@ -25,6 +25,7 @@
     "tsconfig": "workspace:*",
     "typescript": "4.9.4",
     "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8"
+    "@types/react-dom": "^18.0.8",
+    "@tanstack/react-query": "^4.22.0"
   }
 }

@@ -1,11 +1,21 @@
 import { authenticatedGet, viteConfig } from "shell";
-const baseUrl = "https://localhost:7099";
+const baseUrl = viteConfig.DEV ? "https://localhost:7099" : "/bff/invoice";
 
-export const getInvoices = async () => {
-  const url = viteConfig.DEV
-    ? `${baseUrl}/Invoice`
-    : "/bff/invoice/Invoice";
+export interface IInvoice {
+  dueDate: DueDate;
+  amount: number;
+}
 
-  const response = await authenticatedGet(url);
+export interface DueDate {
+  year: number;
+  month: number;
+  day: number;
+  dayOfWeek: number;
+  dayOfYear: number;
+  dayNumber: number;
+}
+
+export const getInvoices = async (): Promise<IInvoice> => {
+  const response = await authenticatedGet(`${baseUrl}/Invoice`);
   return await response?.json();
 };

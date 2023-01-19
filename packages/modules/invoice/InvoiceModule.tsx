@@ -5,30 +5,25 @@ import { IModuleDefinition } from "shell";
 import { Header } from "ui";
 import en from "./translations/en.json";
 import sv from "./translations/sv.json";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const Invoice = () => {
 	const intl = useIntl();
-	const [json, SetJson] = React.useState<string>();
-	React.useEffect(() => {
-		const fetchInvoices = async () => {
-			const invoices = await getInvoices();
-			SetJson(JSON.stringify(invoices));
-		};
-		fetchInvoices();
-	}, []);
+	const queryClient = useQueryClient();
+	const { isLoading, data: rentals } = useQuery({
+		queryKey: ["invoices"],
+		queryFn: getInvoices,
+	});
 
 	return (
 		<>
 			<Header title={intl.formatMessage({ id: "invoice_title" })} />
 			<button
-				onClick={async () => {
-					const invoices = await getInvoices();
-					SetJson(JSON.stringify(invoices));
-				}}
+				onClick={() => queryClient.invalidateQueries({ queryKey: ["invoices"] })}
 			>
 				Get Invoices
 			</button>
-			{json}
+			{!isLoading && JSON.stringify(rentals)}
 		</>
 	);
 };
