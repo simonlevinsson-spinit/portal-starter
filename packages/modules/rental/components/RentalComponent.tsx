@@ -19,15 +19,15 @@ export const RentalComponent = () => {
 
 
 	return (
-		<div className=" bg-blue-500 flex p-4">
+		<>
 			<Header title={intl.formatMessage({ id: "rental_title" })} />
 			
-			<button className=" rounded bg-blue-400 text-white"
+			<button className="rounded bg-blue-400 text-white p-4 mt-6"
 				onClick={() => queryClient.invalidateQueries({ queryKey: ["rentals"] })}
 			>
 				Get Rentals
 			</button>
 			{!isLoading && JSON.stringify(rentals)}
-		</div>
+		</>
 	);
 };

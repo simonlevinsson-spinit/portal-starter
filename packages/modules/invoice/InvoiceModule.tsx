@@ -18,7 +18,7 @@ const Invoice = () => {
 	return (
 		<>
 			<Header title={intl.formatMessage({ id: "invoice_title" })} />
-			<button
+			<button className="rounded bg-blue-400 text-white p-4 mt-6"
 				onClick={() => queryClient.invalidateQueries({ queryKey: ["invoices"] })}
 			>
 				Get Invoices

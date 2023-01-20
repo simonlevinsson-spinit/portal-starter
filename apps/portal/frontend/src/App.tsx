@@ -3,7 +3,7 @@ import React from "react";
 import { RentalModule } from "rental";
 import { AppShell } from "shell";
 function App() {
-	return <div className="p-4"  > <AppShell moduleDefinitions={[InvoiceModule, RentalModule]} /></div>;
+	return <AppShell moduleDefinitions={[InvoiceModule, RentalModule]} />;
 }
 
 export default App;
