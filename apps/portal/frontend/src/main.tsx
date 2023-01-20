@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import "./global.css";
 import { authService } from 'shell';
 import App from './App'
 

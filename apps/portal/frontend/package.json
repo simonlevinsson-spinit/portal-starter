@@ -10,21 +10,25 @@
     "lint": "TIMING=1 eslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "ui": "workspace:*",
-    "shell": "workspace:*",
     "invoice": "workspace:*",
-    "rental": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-    },
+    "react-dom": "^18.2.0",
+    "rental": "workspace:*",
+    "shell": "workspace:*",
+    "ui": "workspace:*"
+  },
   "devDependencies": {
+    "tailwindcss": "^3.2.4",
+    "postcss": "^8.4.21",
+    "autoprefixer": "^10.4.13",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react-swc": "3.0.0",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
+    "tailwindconfig": "workspace:*",
     "typescript": "4.9.4",
-    "vite": "4.0.4",
-    "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8",
-    "@vitejs/plugin-react-swc": "3.0.0"
+    "vite": "4.0.4"
   }
 }
