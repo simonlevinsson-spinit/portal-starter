@@ -1,12 +1,9 @@
-
-import './App.css'
-import { AppShell } from 'shell'
-import { CoolModule } from './CoolModule'
+import "./App.css";
+import { AppShell } from "shell";
+import { CoolModule } from "./CoolModule";
 
 function App() {
-  return (
-    <AppShell moduleDefinitions={[CoolModule]} />
-  )
+  return <AppShell moduleDefinitions={[CoolModule]} />;
 }
 
-export default App
+export default App;

@@ -1,1 +1,1 @@
-export {CoolModule} from './src/CoolModule';
+export { CoolModule } from "./src/CoolModule";

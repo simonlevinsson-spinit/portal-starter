@@ -1,5 +1,5 @@
 import { authenticatedGet, viteConfig } from "shell";
-const baseUrl = viteConfig.DEV ?  "https://localhost:7098" : "/bff/rental";
+const baseUrl = viteConfig.DEV ? "https://localhost:7098" : "/bff/rental";
 
 export interface IRental {
   item: string;
