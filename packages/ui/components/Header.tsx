@@ -1,5 +1,16 @@
 import React from "react";
 
-export const Header = ({ title: title }: { title: string }) => {
-	return <h1 className="text-6xl font-semibold font-display">{title}</h1>;
+
+interface HeaderProps {
+/**
+* Is this the principal call to action on the page?
+*/
+	title: string;
+}
+
+/**
+ * The H1 Page header
+ */
+export const Header = ({title}: HeaderProps) => {
+	return <h1 className="text-6xl font-semibold">{title}</h1>;
 };
