@@ -3,6 +3,7 @@
   "scripts": {
     "build": "turbo run build --filter=portal-app",
     "dev": "turbo run dev --parallel",
+    "sb": "turbo run dev --filter=component-library",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "portal": "turbo run dev --parallel --filter=portal-app"
