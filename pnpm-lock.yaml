@@ -26,13 +26,17 @@ importers:
       '@types/react': ^18.0.24
       '@types/react-dom': ^18.0.8
       '@vitejs/plugin-react-swc': 3.0.0
+      autoprefixer: ^10.4.13
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       eslint-plugin-storybook: ^0.6.10
+      postcss: ^8.4.21
       prop-types: 15.8.1
       react: ^18.2.0
       react-dom: ^18.2.0
       storybook: 7.0.0-beta.25
+      tailwindconfig: workspace:*
+      tailwindcss: ^3.2.4
       tsconfig: workspace:*
       typescript: 4.9.4
       ui: workspace:*
@@ -52,11 +56,15 @@ importers:
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.9
       '@vitejs/plugin-react-swc': 3.0.0_vite@4.0.4
+      autoprefixer: 10.4.13_postcss@8.4.21
       eslint: 7.32.0
       eslint-config-custom: link:../../packages/eslint-config-custom
       eslint-plugin-storybook: 0.6.10_yfqovispp7u7jaktymfaqwl2py
+      postcss: 8.4.21
       prop-types: 15.8.1
       storybook: 7.0.0-beta.25
+      tailwindconfig: link:../../packages/tailwindconfig
+      tailwindcss: 3.2.4_postcss@8.4.21
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
       vite: 4.0.4
