@@ -7,7 +7,7 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "preview": "vite preview",
-    "lint": "TIMING=1 eslint \"src/**/*.ts\"",
+    "lint": "set TIMING=1 && eslint \"src/**/*.ts\"",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

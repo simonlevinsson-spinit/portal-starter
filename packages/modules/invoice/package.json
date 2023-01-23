@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsc --watch --outDir dist",
     "build": "tsc --outDir dist",
-    "lint": "TIMING=1 eslint \"**/*.ts\""
+    "lint": "set TIMING=1 && eslint \"**/*.ts\""
   },
   "dependencies": {
     

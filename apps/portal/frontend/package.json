@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "TIMING=1 eslint \"src/**/*.ts\""
+    "lint": "set TIMING=1 && eslint \"src/**/*.ts\""
   },
   "dependencies": {
     "invoice": "workspace:*",
