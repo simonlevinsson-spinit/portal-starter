@@ -7,7 +7,7 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "preview": "vite preview",
-    "lint": "set TIMING=1 && eslint \"src/**/*.ts\"",
+    "lint": " eslint \"**/*.ts?\"",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -27,7 +27,7 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react-swc": "3.0.0",
-    "eslint": "^7.32.0",
+    "eslint": "8.32.0",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-storybook": "^0.6.10",
     "prop-types": "15.8.1",

@@ -5,7 +5,7 @@
   "types": "./index.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "set TIMING=1 && eslint \"**/*.ts\""
+    "lint": " eslint \"**/*.ts?\""
   },
   "dependencies": {
     "@azure/msal-browser": "2.32.1",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
-    "eslint": "^7.32.0",
+    "eslint": "8.32.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "4.9.4",
