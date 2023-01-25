@@ -13,11 +13,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "6.2.5",
-    "shell": "workspace:*",
     "ui": "workspace:*",
     "vite": "4.0.4"
   },
   "devDependencies": {
+    "shell": "workspace:*",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "eslint": "^7.32.0",

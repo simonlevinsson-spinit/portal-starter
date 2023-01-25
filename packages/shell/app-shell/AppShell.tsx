@@ -15,10 +15,13 @@ export const AppShell = (props: AppShellProps) => {
   const queryClient = new QueryClient();
 
   // get all transaltions from all modules and merge them into one object
-  const translations = props.moduleDefinitions.reduce((acc, module) => {
-    acc = { ...acc, ...module.translations[usersLocale ? "sv" : "en"] };
-    return acc;
-  }, {});
+  const translations = props.moduleDefinitions.reduce<Record<string, string>>(
+    (acc, module) => {
+      acc = { ...acc, ...module.translations[usersLocale ? "sv" : "en"] };
+      return acc;
+    },
+    {}
+  );
 
   return (
     <IntlProvider locale={usersLocale ? "sv" : "en"} messages={translations}>

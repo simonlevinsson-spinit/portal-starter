@@ -15,11 +15,11 @@
     "react-dom": "^18.2.0",
     "ui": "workspace:*",
     "react-intl": "6.2.5",
-    "shell": "workspace:*",
     "@azure/msal-browser": "2.32.1",
     "vite": "4.0.4"
   },
   "devDependencies": {
+    "shell": "workspace:*",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",

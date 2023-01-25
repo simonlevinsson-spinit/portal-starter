@@ -20,7 +20,7 @@ export const InvoiceComponent = () => {
       <button
         className="mt-6 rounded bg-blue-400 p-4 text-white"
         onClick={() => queryClient.invalidateQueries({ queryKey })}
-        >
+      >
         Get Invoices
       </button>
       {!isLoading && JSON.stringify(rentals)}

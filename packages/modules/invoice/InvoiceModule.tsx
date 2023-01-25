@@ -8,7 +8,7 @@ import { InvoiceComponent } from "./components/InvoiceComponent";
 declare global {
   namespace FormatjsIntl {
     interface Message {
-      ids: keyof typeof sv
+      ids: keyof typeof sv;
     }
   }
 }

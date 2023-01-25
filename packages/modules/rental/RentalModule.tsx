@@ -8,7 +8,7 @@ import sv from "./translations/sv.json";
 declare global {
   namespace FormatjsIntl {
     interface Message {
-      ids: keyof typeof sv
+      ids: keyof typeof sv;
     }
   }
 }

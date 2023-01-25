@@ -195,7 +195,6 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-intl: 6.2.5_o77wnou4wwnegu5woljtklrzru
-      shell: link:../../shell
       ui: link:../../ui
       vite: 4.0.4
     devDependencies:
@@ -204,6 +203,7 @@ importers:
       '@types/react-dom': 18.0.9
       eslint: 7.32.0
       eslint-config-custom: link:../../eslint-config-custom
+      shell: link:../../shell
       tsconfig: link:../../tsconfig
       typescript: 4.9.4
 
@@ -226,7 +226,6 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-intl: 6.2.5_o77wnou4wwnegu5woljtklrzru
-      shell: link:../../shell
       ui: link:../../ui
       vite: 4.0.4
     devDependencies:
@@ -235,6 +234,7 @@ importers:
       '@types/react-dom': 18.0.9
       eslint: 7.32.0
       eslint-config-custom: link:../../eslint-config-custom
+      shell: link:../../shell
       tsconfig: link:../../tsconfig
       typescript: 4.9.4
 
